@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+<link href="jquery/css/cupertino/jquery-ui-1.10.3.custom.css" rel="stylesheet">
+<script src="jquery/js/jquery-1.9.1.js"></script>
+<script src="jquery/js/jquery-ui-1.10.3.custom.js"></script>
+</head>
+<script type="text/javascript">
+$(document).ready(function(){
+	$("#myDialog").dialog({
+		 show:{effect:"flod",durition:100},
+		 closeText: "hide",
+		 modal:true,
+		 maxHeight:200,
+		 maxWidth:200,
+		 autoOpen:false,
+		 buttons:[{text:"Yes",
+			 click:function(){
+				 $("#imageLnk").attr("src","psb.jpg");
+		 	}
+		 },{text:"Cancel",
+			click:function(){
+			 $(this).dialog("close");
+			 $("#imageLnk").attr("src","Erica.jpg");
+		 	}
+		 }]
+	});
+	
+	$("#confirmBtn").click(function(){
+		$("#myDialog").dialog("open");
+	});
+	
+	$("#changelinkBtn").click(function(){
+		$("#imageLnk").attr("src","psb.jpg");
+	});
+	
+	$("#zoomOut").click(function(){
+		alert();
+	});
+});
+</script>
+<body>
+<div id="myDialog"><a id="zoomOut" href="javascript:"><img src="Erica.jpg" id="imageLnk" style="width:50px;height:50px"/></a></div>
+<input type="button" value="confirm" id="confirmBtn"/>
+<input type="button" value="change link" id="changelinkBtn"/>
+</body>
+</html>
